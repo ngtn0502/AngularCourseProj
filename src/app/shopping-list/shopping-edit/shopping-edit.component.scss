@@ -1,0 +1,11 @@
+.shopping-edit__input {
+  display: flex;
+  & > * {
+    margin-right: 5rem;
+  }
+  .input-name {
+    input {
+      padding-right: 20rem;
+    }
+  }
+}

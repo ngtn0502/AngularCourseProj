@@ -1,0 +1,60 @@
+<div *ngIf="!!recipe">
+  <div class="row">
+    <div class="col-12">
+      <img [src]="recipe.imgPath" alt="" class="recipe-detail__image" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h1>{{ recipe.name }}</h1>
+    </div>
+  </div>
+
+  <div class="dropdown" appDropdownDirective>
+    <button
+      class="btn btn-secondary dropdown-toggle dropdown"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Dropdown button
+    </button>
+    <div
+      class="dropdown-menu"
+      appDropdownDirective
+      aria-labelledby="dropdownMenuButton"
+    >
+      <a style="cursor: pointer" class="dropdown-item" (click)="onAddRecipe()"
+        >Add to shopping list</a
+      >
+      <a style="cursor: pointer" class="dropdown-item" (click)="onEditRecipe()"
+        >Edit Recipe</a
+      >
+      <a
+        style="cursor: pointer"
+        class="dropdown-item"
+        (click)="onDeleteRecipe()"
+        >Delete Recipe</a
+      >
+    </div>
+  </div>
+
+  <div class="row detail-infor">
+    <div class="col-12 list-group-item">{{ recipe.description }}</div>
+  </div>
+
+  <div class="row detail-infor">
+    <div class="col-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let ing of recipe.ingredients">
+          {{ ing.name }} - {{ ing.quality }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!recipe">Please choose recipe</div>

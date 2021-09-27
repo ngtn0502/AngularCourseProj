@@ -1,0 +1,16 @@
+.detail-manage {
+  display: flex;
+  gap: 2rem;
+}
+.recipe-detail__image {
+  width: 30rem;
+  height: 100%;
+  display: block;
+  background-size: cover;
+}
+
+.detail-infor {
+  & > * {
+    margin-top: 2rem;
+  }
+}

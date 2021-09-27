@@ -1,0 +1,50 @@
+<p>recipes-edit works!</p>
+<p>With id: {{ id || "Add New ID" }}</p>
+<p>Edit Mode: {{ editMode || "Add New Mode" }}</p>
+
+<div class="row">
+  <div class="col-12">
+    <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Enter name"
+          name="name"
+          formControlName="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="desc">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="desc"
+          placeholder="Description"
+          name="description"
+          formControlName="desc"
+        />
+      </div>
+      <div class="form-group">
+        <label for="desc">Image path</label>
+        <input
+          type="text"
+          class="form-control"
+          id="img"
+          placeholder="Image path"
+          name="imgPath"
+          formControlName="imgPath"
+        />
+      </div>
+      <img class="recipe-edit__image" [src]="dataForm.value.imgPath" alt="" />
+      <button type="submit" class="btn btn-primary" *ngIf="!editMode">
+        Submit
+      </button>
+      <button type="submit" class="btn btn-primary" *ngIf="editMode">
+        Edit
+      </button>
+    </form>
+  </div>
+</div>

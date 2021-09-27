@@ -1,0 +1,11 @@
+.recepie__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  .receipe__img {
+    display: block;
+    width: 15rem;
+    background-size: cover;
+  }
+}
